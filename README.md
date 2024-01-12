@@ -1,4 +1,4 @@
-![Blueberry logo](./logo.svg?raw=true | width=256)
+![Blueberry logo](https://raw.githubusercontent.com/ViniciusGiroto/blueberry/main/logo.svg | width=256)
 # Blueberry
 Gnome extension for bluetooth battery indication
 
