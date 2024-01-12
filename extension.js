@@ -23,13 +23,6 @@ const Indicator = GObject.registerClass(
                 this._insert_device(device, true);
             }
 
-            // const item = new PopupMenu.PopupMenuItem(_("Show Notification"));
-            // item.connect("activate", () => {
-                // Main.notify(_("Whatʼs up, folks?"));
-            // });
-
-            // this.menu.addMenuItem(item);
-
             this._devices.connectObject(
                 "items-changed", this._onItemsChanged.bind(this),
                 this,
@@ -143,25 +136,11 @@ export default class IndicatorExampleExtension extends Extension {
         this._client = new GnomeBluetooth.Client();
         this._indicator = new Indicator(this._client.get_devices());
 
-        this._client.connectObject(
-            "device-added", this._onDeviceAdded.bind(this),
-            "device-removed", this._onDeviceRemoved.bind(this),
-            this,
-        );
-
         Main.panel.addToStatusArea(this.uuid, this._indicator);
     }
 
     disable() {
-        this._client.disconnectObject(this);
-
         this._indicator.destroy();
         this._indicator = null;
     }
-
-    // FIXME: don't know what to do with this yet
-    _onDeviceAdded(client, device) {}
-
-    // FIXME: don't know what to do with this yet
-    _onDeviceRemoved(client, device) {}
 }
