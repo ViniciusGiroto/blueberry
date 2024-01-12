@@ -1,0 +1,10 @@
+{
+  "name": "Blueberry",
+  "description": "Bluetooth battery indicator",
+  "uuid": "blueberry@giroto.dev",
+  "shell-version": [
+    "45"
+  ],
+  "version": 1,
+  "version-name": "1.0"
+}
